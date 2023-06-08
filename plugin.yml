@@ -1,0 +1,6 @@
+name: AkariSeeInventory
+version: 1.0.0-BETA
+author: Akari_my
+description: See Players Inventory
+api: 3.0.0
+main: Akari\Main
