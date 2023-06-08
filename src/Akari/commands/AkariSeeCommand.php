@@ -33,7 +33,7 @@ class AkariSeeCommand extends Command {
                 $sender->sendMessage("Il giocatore non è online.");
                 return true;
             }
-            $this->openInventory($sender, $target)
+            $this->openInventory($sender, $target);
         } else {
             $sender->sendMessage("Questo comando può essere utilizzato solo in-game.");
         }
