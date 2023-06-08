@@ -44,7 +44,7 @@ class AkariSeeCommand extends Command {
         $menu = InvMenu::create(InvMenu::TYPE_DOUBLE_CHEST)
             ->setName("Inventario di " . $target->getName())
             ->setListener(function (\muqsit\invmenu\transaction\InvMenuTransaction $transaction): \muqsit\invmenu\transaction\InvMenuTransactionResult {
-                return $transaction->discard(); // Blocca le modifiche all'inventario
+                return $transaction->discard();
             })
             ->setInventoryCloseListener(function (Player $viewer, InvMenuInventory $inventory) use ($target): void {
                 $viewer->sendMessage("Hai chiuso l'inventario di " . $target->getName());
