@@ -25,17 +25,17 @@ class AkariSeeCommand extends Command {
     {
         if ($sender instanceof Player) {
             if (count($args) < 1) {
-                $sender->sendMessage("Uso: /akarisee <player>");
+                $sender->sendMessage("Use: /akarisee <player>");
                 return true;
             }
             $target = $this->plugin->getServer()->getPlayer($args[0]);
             if ($target === null) {
-                $sender->sendMessage("Il giocatore non è online.");
+                $sender->sendMessage("The player is not online.");
                 return true;
             }
             $this->openInventory($sender, $target);
         } else {
-            $sender->sendMessage("Questo comando può essere utilizzato solo in-game.");
+            $sender->sendMessage("This command can only be used in-game.");
         }
         return true;
     }
@@ -47,7 +47,7 @@ class AkariSeeCommand extends Command {
                 return $transaction->discard();
             })
             ->setInventoryCloseListener(function (Player $viewer, InvMenuInventory $inventory) use ($target): void {
-                $viewer->sendMessage("Hai chiuso l'inventario di " . $target->getName());
+                $viewer->sendMessage("You have closed the inventory of " . $target->getName());
             });
         $menu->getInventory()->setContents($target->getInventory()->getContents());
         $menu->send($viewer);
