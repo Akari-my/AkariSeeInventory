@@ -13,6 +13,9 @@ class Main extends PluginBase{
         if (!InvMenuHandler::isRegistered()) {
             InvMenuHandler::register($this);
         }
+
+        $this->saveDefaultConfig();
+
         $this->getLogger()->info(TF::RED . "==========( AkariSeeInventory )=========");
         $this->getLogger()->info(TF::GRAY . "» Version: " . $this->getDescription()->getVersion());
         $this->getLogger()->info(TF::GRAY . "» Author: Akari_my");
